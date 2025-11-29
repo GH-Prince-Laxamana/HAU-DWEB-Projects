@@ -2,7 +2,7 @@
 
 // Author: Laxamana, Prince S.
 // Section: WD203
-// Date: November 29, 2025
+// Date of Last Update: November 29, 2025
 
 // Arrays
 $europe_perfumes = [
@@ -30,7 +30,7 @@ $sale_perfume_index = array_rand($random_selection);
 $sale_perfume = $random_selection[$sale_perfume_index];
 
 $sale_discount = 0.50;
-$sale_price = $sale_perfume['price'] * (1 - $sale_discount);
+$sale_price = $sale_perfume['price'] * (1 - $sale_discount); // expressions
 
 if ($sale_perfume['stock'] == 0) {
     $sale_stock_display = "Out of Stock";
