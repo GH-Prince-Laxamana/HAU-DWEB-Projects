@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(rgb(3, 23, 39), rgb(7, 35, 57));
+    color: rgb(255, 255, 247);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+h1 {
+    color: rgb(238, 207, 0);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4rem;
+    text-align: left;
+    margin-left: 30px;
+    margin-bottom: 0;
+}
+
+h3 {
+    font-size: 1.5rem;
+    text-align: left;
+    margin-left: 30px;
+}
+
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.perfume-selection {
+    margin: auto;
+}
+
+.title {
+    font-size: 5rem;
+    margin-bottom: 0;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+}
+
+.items {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+
+.perfume-item {
+    background-color: #ffffff3d;
+    border-radius: 8px;
+    padding: 1.5em;
+    width: 350px;
+    height: auto;
+    text-align: center;
+}
+
+.perfume-item:hover,
+.sale-perfume:hover {
+    background-color: #ffffff4b;
+}
+
+.sale-perfume {
+    background-color: #ffffff3d;
+    border-radius: 8px;
+    padding: 1.5em;
+    width: 500px;
+    height: auto;
+    text-align: center;
+    margin: 5em auto 0;
+}
+
+.sale-perfume img,
+.perfume-item img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+.sale-perfume img {
+    width: 400px;
+    height: 400px;
+}
+
+.original-price {
+    color: rgb(201, 239, 255);
+}
+
+.sale-price {
+    color: rgb(255, 229, 57);
+}
+
+.perfume-item .name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+.perfume-item .price,
+.perfume-item .stock {
+    color: rgb(255, 229, 57);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.perfume-item .stock {
+    color: white;
+}
+
+button {
+    background-color: #1a3766;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2a354a;
+}
