@@ -50,6 +50,8 @@ if ($sale_perfume['stock'] == 0) {
 </head>
 
 <body>
+    <?php include 'includes/header.php';?>
+
     <h1>Banglu</h1>
     <h3>Welcome to Banglu - Men! Discover signature men’s fragrances across different countries.</h3>
 
@@ -123,6 +125,8 @@ if ($sale_perfume['stock'] == 0) {
             <?php endforeach; ?>
         </div>
     </section>
+
+    <?php include 'includes/footer.php';?>
 </body>
 
 </html>

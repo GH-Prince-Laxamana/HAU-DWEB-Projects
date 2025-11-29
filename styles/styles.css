@@ -124,3 +124,22 @@ button {
 button:hover {
     background-color: #2a354a;
 }
+
+footer, header {
+  background-color: #041842;
+  padding: 10px;
+  width: 100%;
+}
+
+header {
+    margin-bottom: 1em;
+}
+
+footer {
+    margin-top: 5em;
+}
+
+footer p, header p {
+  color: white;
+  font-size: 0.9rem;
+}
