@@ -26,37 +26,15 @@ function get_reorder_message(int $stock = 0): string
     return ($stock < 10) ? "Yes" : "No";
 }
 
-function get_total_value(int $quantity, float $price): string
+function get_total_value(int $quantity, float $price): string //returns formatted string instead of float for decimal place purposes
 {
     return number_format($price * $quantity, 2);
 }
 
-function get_tax_due(int $quantity, float $price, int $tax = 0): string
+function get_tax_due(int $quantity, float $price, int $tax = 0): string //returns formatted string instead of float for decimal place purposes
 {
     return number_format(($price * $quantity) * ($tax / 100), 2);
 }
-
-function display_stock_table($perfume_stock, $tax)
-{
-    echo "<tr>";
-    echo "<th>Product</th>";
-    echo "<th>Stock</th>";
-    echo "<th>Re-order</th>";
-    echo "<th>Total Value</th>";
-    echo "<th>Tax Due</th>";
-    echo "<tr>";
-
-    foreach ($perfume_stock as $product_name => $data) {
-        echo "<tr>";
-        echo "<td>" . $product_name . "</td>";
-        echo "<td>" . $data['stock'] . "</td>";
-        echo "<td>" . get_reorder_message($data['stock']) . "</td>";
-        echo "<td>PHP " . get_total_value($data['stock'], $data['price']) . "</td>";
-        echo "<td>PHP " . get_tax_due($data['stock'], $data['price'], $tax) . "</td>";
-        echo "</tr>";
-    }
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -78,12 +56,44 @@ function display_stock_table($perfume_stock, $tax)
     <main>
         <table>
             <caption>Europe Perfumes</caption>
-            <?= display_stock_table($europe_perfumes_stock, $tax) ?>
+            <tr>
+                <th>Product</th>
+                <th>Stock</th>
+                <th>Re-order</th>
+                <th>Total Value</th>
+                <th>Tax Due</th>
+            </tr>
+
+            <?php foreach ($europe_perfumes_stock as $product_name => $data) { ?>
+                <tr>
+                    <td><?= $product_name ?></td>
+                    <td><?= $data['stock'] ?></td>
+                    <td><?= get_reorder_message($data['stock']) ?></td>
+                    <td>PHP <?= get_total_value($data['stock'], $data['price']) ?></td>
+                    <td>PHP <?= get_tax_due($data['stock'], $data['price'], $tax) ?></td>
+                </tr>
+            <?php } ?>
         </table>
 
         <table>
             <caption>Asia Perfumes</caption>
-            <?= display_stock_table($asia_perfumes_stock, $tax) ?>
+            <tr>
+                <th>Product</th>
+                <th>Stock</th>
+                <th>Re-order</th>
+                <th>Total Value</th>
+                <th>Tax Due</th>
+            </tr>
+
+            <?php foreach ($asia_perfumes_stock as $product_name => $data) { ?>
+                <tr>
+                    <td><?= $product_name ?></td>
+                    <td><?= $data['stock'] ?></td>
+                    <td><?= get_reorder_message($data['stock']) ?></td>
+                    <td>PHP <?= get_total_value($data['stock'], $data['price']) ?></td>
+                    <td>PHP <?= get_tax_due($data['stock'], $data['price'], $tax) ?></td>
+                </tr>
+            <?php } ?>
         </table>
     </main>
 
